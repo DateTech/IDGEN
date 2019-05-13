@@ -1,0 +1,43 @@
+<div class="main-con container">
+    <div class="row">
+        <div class="col-sm-4">
+            <div class="panel panel-default flat" style="margin-bottom: 30px;">
+                <div class="panel-body">
+                    <p><a href="/main" class="active"> View Details </a></p>
+                    <p><a href="/print"> Print Card </a></p>
+                    <p><a href="/settings"> Settings </a></p>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-8">
+            <div class="panel panel-default flat">
+                <div class="panel-body text-center">
+                    <h3 style="margin-top:30px; margin-bottom:70px;"> Change Password </h3>
+                    {{#if errr}}
+                        <div class="alert alert-warning alert-dismissible">
+                            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                            <strong>Warning!</strong> password didn't match
+                        </div>
+                    {{/if}}
+                    <form action="/changePass" method="POST">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <input type="password" required="required" Placeholder="New Password" name="pwd" class="form-control"/>
+                                </div>
+                            </div>
+                            
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <input type="password" required="required" Placeholder="Confirm Password" name="conPwd" class="form-control"/>
+                                </div>
+                            </div>
+
+                            <button type="submit" style="margin-top: 20px;" required="required" class="btn btn-success btn-flat btn-lg"> Update </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

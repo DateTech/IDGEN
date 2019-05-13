@@ -1,0 +1,80 @@
+<div class="main-con container">
+    <div class="row">
+        <div class="col-sm-4">
+            <div class="panel panel-default flat" style="margin-bottom: 30px;">
+                <div class="panel-body">
+                    <p><a href="/main"> View Details </a></p>
+                    <p><a href="/print"> Print Card </a></p>
+                    <p><a href="/settings"> Settings </a></p>
+                </div>
+            </div>
+
+            <div class="panel panel-default flat">
+                <div class="panel-body">
+                    <img src="http://lorempixel.com/300/200" alt="profile" id="profileImage" class="img img-responsive img-thumbnail img-flat"/>
+                    <form action="/update-img" method="POST" enctype="multipart/form-data">
+                        <input id="imageUpload" type="file" name="profile_photo" placeholder="Photo" required="" capture />
+                        <button type="submit" class="btn btn-block btn-success btn-flat" style="margin-top: 10px;">Update</button> 
+                    </form>                    
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-8">
+            <div class="panel panel-default flat">
+                <div class="panel-body text-center">
+                    <h3 style="margin-top:30px; margin-bottom:70px;"> Complete Details </h3>
+                    <form action="/update" method="POST">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <input type="text" required="required" Placeholder="Last Name" name="lname" class="form-control" readonly="true" value="{{data.lname}}" />
+                                </div>
+                            </div>
+                            
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <input type="text" required="required" Placeholder="First Name" name="fname" class="form-control" readonly="true" value="{{data.fname}}" />
+                                </div>
+                            </div>
+
+                            <div class="divider"></div>
+
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <select class="form-control" name="state" required="required" id="selState">
+                                        <option value="" disabled selected>State of Origin</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <select class="form-control" name="local" required="required" id="selLocal">
+                                        <option value="" disabled selected>Local Government</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="divider"></div>
+
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <input type="text" placeholder="Date of Birth" name="dob" required="required" data-provide="datepicker" class="form-control" value="{{data.dob}}" />
+                                </div>
+                            </div>
+
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <input type="text" placeholder="Place of Birth" name="place" required="required" class="form-control" value="{{data.place}}" />
+                                </div>
+                            </div>
+
+                            <button type="submit" style="margin-top: 20px;" required="required" class="btn btn-success btn-flat btn-lg"> Update </button>
+                        </div>
+                    </form>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
